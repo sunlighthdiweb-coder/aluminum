@@ -1,0 +1,70 @@
+/* --- 1. DESKTOP MEGA MENU STYLING (Full Width at Column Layout) --- */
+
+/* Gawing full-width ang dropdown menu at sentrohin ito sa ClassyNav container */
+.classynav ul li ul.dropdown.megamenu-content {
+    min-width: 100vw; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    padding: 20px; 
+}
+
+/* I-override ang padding ng ClassyNav sa loob ng Mega Menu */
+.classynav ul li ul li {
+    padding: 0 !important; 
+}
+
+/* Styling para sa Title (megamenu-title-style) - GINAYA ang font-weight-bold at text-uppercase ng template mo */
+.megamenu-title-style {
+    font-weight: 700; /* Bold Title */
+    color: #333; 
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 8px 10px; /* Dagdag padding */
+    margin-bottom: 5px !important;
+    background-color: #6c757d; /* Light background para sa Title */
+    /* Tanggalin ang border-bottom para maging malinis, tulad sa template mo */
+}
+.megamenu-title-style a {
+    color: #FFF !important;
+    text-decoration: none;
+    display: block;
+}
+
+/* Styling para sa List Group Items (Action Links) */
+.list-group-flush .list-group-item-action {
+    color: #555; 
+    font-size: 13px;
+    border: none;
+    padding: 4px 10px; /* Mas maliit na padding para magkasya lahat */
+    transition: background-color 0.2s, color 0.2s;
+    /* Linya sa pagitan ng mga links - Optional, pero mas malinis kung wala */
+}
+
+.list-group-flush .list-group-item-action:hover {
+    color: #fbb710; /* Yellow hover color */
+    background-color: #fef8ed; /* Very light yellow background sa hover */
+}
+
+/* --- 2. MOBILE VIEW OPTIMIZATION --- */
+
+@media (max-width: 991.98px) {
+    /* Gawing static ang dropdown para umayon sa vertical mobile menu */
+    .classynav ul li ul.dropdown.megamenu-content {
+        min-width: auto; 
+        left: 0 !important; 
+        transform: none !important; 
+        position: static !important; 
+        padding: 0; /* Walang padding sa mobile container */
+    }
+
+    /* Ayusin ang padding ng titles at links para maging malinis at madaling i-tap */
+    .megamenu-title-style {
+        padding: 10px 15px; 
+
+    }
+    
+    .list-group-flush .list-group-item-action {
+        padding: 8px 20px; /* Dagdag padding sa gilid para mas madaling i-tap */
+        border-bottom: 1px solid #f0f0f0;
+    }
+}
